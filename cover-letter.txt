@@ -1,25 +1,27 @@
 
 
-HI! I love reddit and would be happy to work with you guys.  Avast is
-Prague-based, and closing the Emeryville, CA office, so, my 18 year
-ride there is over, and I'm looking for my latest act in life.  Act
-one was a PhD in Computer Science, which I loved.  Act two was going
-through the complete lifecycle of a startup, 12 people to 200 to sale,
-which was an absolute wild ride, and I loved it. For act three, I
-would love to work with people who already have their own ways to do
-things, not invent everything myself.  Work with experts on mature
-technology, on a product I believe in.
+Hello,
 
-If you are writing functional reactive kotlin for android, and have
-client devs writing scripts to make dev life easier (account
-management, automating daily routine, data visualization, etc), that's
-what I'm best at and looking to continue doing.
+I'm a Senior/Staff Engineer who excels at writing functional reactive
+Kotlin for Android, and provides ownership of the entire CI/CD build
+lifecycle, feature ownership, tools & testing support, and team
+technical leadership. I also love writing scripts and tools to make
+dev and QA life easier -- account management, daily routine
+automation, analytics accessors, data visualization, etc -- and enjoy
+interacting with SysOps.
 
-Please contact me at your convenience. I am free starting in February.
+I like your product and would be excited to discuss the possibilities
+of working with you.  I love working with smart, talented people of
+all ages, backgrounds, and seniority on either new or mature
+technology, on huge codebases, or spinning up a new one, and always
+have my hands dirty in the code, leading by example.  I'm also a great
+mentor for young engineers.
 
-Thanks and Best regards,
+Please contact me at your convenience.
+
+Thanks and Best Regards,
+
 Todd Hodes
-
 (510) 332-0399
 todd@toddh.org
 
