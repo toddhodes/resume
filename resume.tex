@@ -55,7 +55,7 @@ Technical experience  \\[-16pt]
 \end{bf}
 
 \begin{itemize}
-\item Programming languages: Kotlin, Java, shell, SQL, C/C++, C\#, JavaScript, python. \\[-18pt]
+\item Programming languages: Kotlin, Java, shell, SQL, C/C++, C\#, javascript, python. \\[-18pt]
 \item Build tools: git, TeamCity, Jenkins, Tinderbox.   \\[-18pt]
 \item Collaboration tools: Jira, Confluence, Figma, Miro, Zeplin, Bugzilla.    \\[-18pt]
 \item Cloud \& containers: EC2, S3, ELB, EMR, docker.  \\[-18pt]
@@ -112,13 +112,15 @@ Work Experience, cont.
 	\bf  LocationLabs LLC (dba WaveMarket, Inc.), Emeryville, California    & June 2002 -  \\
 	\bf  Senior Scientist, Senior Software Engineer, Director of Engineering (Mobile) & October 2014 \\[4pt]
 	
-	   I was one of the first dozen employees at Berkeley-founded, and then Emeryville-based, WaveMarket/LocationLabs,
+	   I was one of the first dozen employees at Berkeley-founded, and then Emeryville-based, 
+	   WaveMarket/LocationLabs,
 	   an early-stage startup that received its series A in 2001.
 	   We went from no deployed products in 2002 to an
 	   acquisition by AVG Technologies in 2014.  I wore every engineering hat, starting with responsibility
-	   for full-stack client, server, and SysOps -- writing tools and software for all three -- to
-	   then specializing in mobile development as we grew to about 160 employees.  
-	   I personally installed our first servers, load balancer, and VPN in our first colo.  
+	   for full-stack client, server, and SysOps to
+	   then specializing in mobile development as we grew.  
+	   We started small -- 
+	   I drove my car over to install the servers, load balancer, and VPN in our first colo space in Oakland.s
 	   There were many product pivots along the way. Please refer to the {\it Projects} section for a sampling, 
 	   and, I am happy to describe any of them in much more detail on request.
 	   At first, these were written for J2ME/BlackBerry, PocketPC, and mobile web (xHTML).
@@ -165,17 +167,45 @@ Projects
 		Sprint Family Locator,
 		Verizon FamilyBase,
 		AT\&T FamilyMap} Android apps: 
-		Major contributor to 1MM+ LOC Android monorepo; programming \& architecture, 
-		feature ownership, API design, lead on Location and Controls 
-		cross-functional horizontals, build process, infrastructure, testing, debug support, backward compatibility,
-		technical leadership, and related support tooling \& scripting. \\[-16pt]
+		
+		Ongoing contributor (implementation, maintenance) to a 1MM+ LOC Android codebase that comprised
+		various white-label Parental Controls applications. There were two major feature 
+		categories.  {\it Controls} which collected data about device usage from a ``child'' phone and displayed it
+		in rich UIs on a ``parent'' phone, and, {\it Location}, map-based features such as geofences, location polling, 
+		location check-in, and ride requests.
+		
+		One specific focus area was the implementation and maintenance of the child-phone data extraction -- 
+		call, message, \& contact list collection, 
+		network traffic tracking, and
+		per-application usage (foreground activity) timing.  
+		Another focus area was implementing and maintaining the {\it Content Filtering} library.  
+		This was anchored by an a on-device VPN service that intercepted only
+		DNS traffic (DNS over TLS man-in-the-middle, or unencrypted port 53), without re-routing application traffic.
+		A ``web shield'' blocking feature leveraged
+		this control over DNS mappings to support both web blocking and app network traffic blocking.  Additionally,
+		there was an Accessibility (a11y) service extension that we used to 
+		\begin{itemize}
+		\item monitor activities to provide app UI auto-minimize, including floating players in PIP,
+		\item detect \& disable attempts to uninstall the app, and
+		\item automate setup -- enable Device Admin, VPN, and related Settings toggles.
+		\end{itemize}
+		
+		This project went through a major refactor to MVP + Rx when a pair of separated Controls and Location
+		apps were combined, updating an aging codebase to best practices.  
+		
+		In addition to providing software engineering over the lifetime of the app, 
+		I migrated to technical leadership in the director/staff role, dealing more with
+		programming architecture, 
+		feature ownership (Location and Controls horizontals), API design,
+		build process, testing/debug support, and related tooling \& scripting.  
+		\\[-16pt]
 		
 		\item {\em  AT\&T FamilyMap} WindowsPhone app: I wrote our WinPhone 7+
 			implementation of the AT\&T family locator. Our partners at AT\&T requested that 
 			we support it natively for their new phones with the new OS, and pre-load it. 
 			Worked at the Microsoft campus in Redmond under NDA
 			finalizing the builds.
-			They loved it, app was preloaded on every Windows phone sold by AT\&T. \\[-16pt]
+			It ended up preloaded on every Windows phone sold by AT\&T. \\[-16pt]
 
 		\item \url{veriplace.com}: Carrier and non-carrier cell phone location as a API service. 
 		A suite of thin smartphone application agents providing
@@ -184,15 +214,13 @@ Projects
 		API/architecture, sole contributor to Windows Mobile implementation, contributor to Android/J2ME/RIM
 		shared codebase.
 
-		\item \url{streethive.com}: location-based social sharing site: StreetHive and Crunkie were social networks 
+		\item \url{streethive.com}: An early location-based social sharing site: 
+		StreetHive and Crunkie were social networks 
 		focused on users sharing photos and text/comments atop a map. Supported on 
 		handset clients (J2ME, RIM, xHTML, WAP) and web.  
 		I worked on the handset client team, and shared responsibility for architecting the backend/APIs such that
 		they were amenable to both web and 
 		mobile content access. Java/J2ME front-end, Java/MySQL backend.
-
-\medskip
-\bigskip
 
 		\item \url{m.ask.com}: One of the worlds first mobile portals.  xHTML-MP/WAP access to the ask.com
 		syndication backend. Provided access to full web search, 
@@ -201,24 +229,25 @@ Projects
 		by myself and one other engineer.  {\em The site won two Webby Awards in the Mobile category 
 		(both Jury and People's Choice).}
 
-		\item \url{cmprssr.com}: In order to view the resulting content discovered via queries on m.ask.com, web 
-		pages needed to be transcoded from free-form HTML to valid xHTML-MP. cmprssr provided this service at
+		\item \url{cmprssr.com}: In order to view the resulting content discovered via queries on m.ask.com
+		on feature-poor handsets, web 
+		pages needed to be transcoded from free-form HTML to valid xHTML-MP. {\it cmprssr} provided this service at
 		extremely high volume (millions/day). Written in perl by myself and one other engineer.
 
   		\item IAC \url{gps.ask.com}: voice turn-by-turn navigation on GPS-enabled feature phones
-		 to aggregated InterAactiveCorp (IAC) properties CitySearch, Evite, Ticketmaster, Ask.com. The underlying technology innovation
+		 to aggregated InterAactiveCorp (IAC) properties CitySearch, Evite, Ticketmaster, Ask.com. 
+		 The underlying technology innovation
 		  used to manage app complexity under memory and processing constraints was a declarative UI screen specification
-		   augmented with novel XML-defined action flows called “chains”. These XML descriptions were compiled down
+		   augmented with novel XML-defined action flows called ``chains''. These XML descriptions were compiled down
 		    into primitives for efficiency, and could be updated at runtime, to overcome the lack of a ClassLoader 
 		    in JavaME. 
 	   
   		\item {\em MapMe} \& {\em NearHere}:
-		on-handset point-of-interest finders + route generator, communicating to a custom geoserver
-		backend. WaveMarket’s first handset software product releases. Responsible for hardware acquisition
-		and co-location hosting,
+		Early on-handset point-of-interest finders + route generator, communicating to a custom geoserver
+		backend. WaveMarket's first handset software product releases. Responsible fo co-location hosting,
 		OS installation and configuration, sysadmin / operations, Cisco VPN to partner site, hardware load-balancing
 		and failover (via Alteon ACEdirector), data integration, plus all the client and server application software itself.
-		JAR code size was limited to 100KB, heap to 256KB.
+		This on very limited hardware -- code size was limited to 100KB, heap to 256KB.
 		
 	\end{itemize}
 
@@ -242,6 +271,14 @@ xxi \= xx \= x \= \kill
 \>\>      ``System and method for managing third party application program access to user information \\
 \>\>      via a native application program interface'' \\
 \>\>    Patent \#8683554, issued 3/2014. \\
+
+\end{tabbing}
+\newpage
+\begin{bf} \large
+Patents \& Publications, cont.
+\end{bf}
+\begin{tabbing}
+xxi \= xx \= x \= \kill
 
 \smallskip \\[-3pt]
 \>    Adrian Freed, Todd Hodes, John Hauser \\
@@ -274,14 +311,6 @@ xxi \= xx \= x \= \kill
 \>\>       ACM Wireless Networks Journal, Special issue on Mobile Computing \\
 \>\>       Vol. 5, No. 5, October 1999, pp. 411-427. \\
 
-\end{tabbing}
-\newpage
-\begin{bf} \large
-Patents \& Publications, cont.
-\end{bf}
-\begin{tabbing}
-xxi \= xx \= x \= \kill
-
 
 \smallskip \\[-3pt]
 \>    T. Hodes, R. H. Katz \\
@@ -293,8 +322,6 @@ xxi \= xx \= x \= \kill
 \>\>      ``Second-order Recursive Oscillators for Musical Additive Synthesis \\
 \>\>\>        Applications on SIMD and VLIW Processors,'' \\
 \>\>       International Computer Music Conference (ICMC), Beijing, China, October 1999. \\
-
-
 
 
 \smallskip \\[-3pt]
@@ -321,6 +348,15 @@ xxi \= xx \= x \= \kill
 \>\>       SPIE Multimedia Computing and Networking 1999,  \\
 \>\>        San Jose, California, January 1999, pp. 17-28. \\
 \smallskip \\[-3pt]
+
+\end{tabbing}
+\newpage
+\begin{bf} \large
+Patents \& Publications, cont.
+\end{bf}
+\begin{tabbing}
+xxi \= xx \= x \= \kill
+
 \>    E. Brewer, R. H. Katz, E. Amir, H. Balakrishnan, Y. Chawathe, A. Fox,
     S. Gribble, T. Hodes, G. Nguyen, \\
 \>\>\> V. Padmanabhan, M. Stemm, S. Seshan, T. Henderson \\
@@ -355,14 +391,6 @@ xxi \= xx \= x \= \kill
 \>\> ``The Bay Area Research Wireless Access Network (BARWAN),''  \\
 \>\> 41st IEEE Computer Society International Conference (COMPCON), 1996. \\
 
-
-\end{tabbing}
-\newpage
-\begin{bf} \large
-Patents \& Publications, cont.
-\end{bf}
-\begin{tabbing}
-xxi \= xx \= x \= \kill
 
 
 \smallskip \\
